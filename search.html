@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search - SkyWay</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="search-page">
+        <div class="search-container">
+            <div class="header">
+                <h1><i class="fas fa-plane"></i> SkyWay Flight Search</h1>
+                <p>Find the best flights at unbeatable prices</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <div class="search-inputs">
+                    <div class="input-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-plane-departure"></i>
+                            <input type="text" id="departure" placeholder="From" value="New York">
+                        </div>
+                        <div class="swap-icon" onclick="swapCities()">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="input-with-icon">
+                            <i class="fas fa-plane-arrival"></i>
+                            <input type="text" id="arrival" placeholder="To" value="Los Angeles">
+                        </div>
+                    </div>
+                    <div class="date-inputs">
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" id="departure-date" required>
+                        </div>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" id="return-date" placeholder="Return">
+                        </div>
+                    </div>
+                </div>
+                <div class="search-actions">
+                    <button type="button" class="search-btn" onclick="searchFlights()">
+                        <span>Search Flights</span>
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" class="refresh-btn" onclick="refreshFlights()">
+                        <span>Refresh</span>
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Animation -->
+            <div class="loading" id="loading">
+                <div class="plane-loading">
+                    <i class="fas fa-plane"></i>
+                    <span>Searching for flights...</span>
+                </div>
+            </div>
+
+            <!-- Flight Results -->
+            <div class="flight-results" id="flightResults">
+                <div class="results-header">
+                    <h2>Available Flights</h2>
+                    <div class="sort-options">
+                        <select id="sortBy" onchange="sortFlights()">
+                            <option value="price">Price (Low to High)</option>
+                            <option value="duration">Duration (Shortest)</option>
+                            <option value="departure">Departure Time</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flights-container" id="flightsContainer">
+                    <!-- Flight cards will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>

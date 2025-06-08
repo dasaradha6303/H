@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Way Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <div class="payment-container">
+            <h1 class="title">Complete Your Booking</h1>
+            
+            <!-- Booking Summary Section -->
+            <div class="section booking-summary-section">
+                <h2 class="section-title">Booking Summary</h2>
+                <div class="booking-details" id="bookingDetails">
+                    <!-- Booking details will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Pricing Section -->
+            <div class="section pricing-section">
+                <h2 class="section-title">Pricing Details</h2>
+                <div class="pricing-details" id="pricingDetails">
+                    <!-- Pricing details will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Payment Form Section -->
+            <div class="section">
+                <h2 class="section-title">Payment Information</h2>
+                <form id="paymentForm" class="payment-form">
+                    
+                    <!-- Card Details -->
+                    <div class="card-section">
+                        <h3 class="subsection-title">Card Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card-number" 
+                                   placeholder="1234 5678 9012 3456" maxlength="19" required>
+                            <div class="card-icons">
+                                <span class="card-icon visa">💳</span>
+                                <span class="card-icon mastercard">💳</span>
+                                <span class="card-icon amex">💳</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry-date">Expiry Date</label>
+                                <input type="text" id="expiry-date" name="expiry-date" 
+                                       placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" 
+                                       placeholder="123" maxlength="4" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardholder-name">Cardholder Name</label>
+                            <input type="text" id="cardholder-name" name="cardholder-name" 
+                                   placeholder="Name as on card" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Billing Address -->
+                    <div class="billing-section">
+                        <h3 class="subsection-title">Billing Address</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="billing-country">Country</label>
+                                <select id="billing-country" name="billing-country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="AU">Australia</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billing-state">State/Province</label>
+                                <input type="text" id="billing-state" name="billing-state" 
+                                       placeholder="State or Province" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="billing-address">Address</label>
+                            <input type="text" id="billing-address" name="billing-address" 
+                                   placeholder="Street address" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="billing-city">City</label>
+                                <input type="text" id="billing-city" name="billing-city" 
+                                       placeholder="City" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billing-zip">ZIP/Postal Code</label>
+                                <input type="text" id="billing-zip" name="billing-zip" 
+                                       placeholder="ZIP or Postal Code" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Options -->
+                    <div class="options-section">
+                        <h3 class="subsection-title">Additional Options</h3>
+                        
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="travel-insurance" name="travel-insurance" value="yes">
+                                <label for="travel-insurance">
+                                    Add Travel Insurance (+$49.99)
+                                    <span class="option-description">Comprehensive coverage for your trip</span>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="priority-boarding" name="priority-boarding" value="yes">
+                                <label for="priority-boarding">
+                                    Priority Boarding (+$24.99)
+                                    <span class="option-description">Board first and secure overhead space</span>
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="extra-baggage" name="extra-baggage" value="yes">
+                                <label for="extra-baggage">
+                                    Extra Baggage (+$39.99)
+                                    <span class="option-description">Additional 23kg checked baggage</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms and Conditions -->
+                    <div class="terms-section">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="terms-agreement" name="terms-agreement" required>
+                            <label for="terms-agreement">
+                                I agree to the <a href="#" class="terms-link">Terms and Conditions</a> 
+                                and <a href="#" class="terms-link">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Total and Payment Button -->
+                    <div class="payment-summary">
+                        <div class="total-amount" id="totalAmount">
+                            <span class="total-label">Total Amount:</span>
+                            <span class="total-price">$0.00</span>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="back-btn" id="backBtn">
+                                ← Back to Booking
+                            </button>
+                            <button type="submit" class="pay-btn" id="payBtn">
+                                Complete Payment
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="footer">
+                <p>🔒 Your payment information is secure and encrypted</p>
+                <p>© 2024. Sky Way Payment - All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="success-icon">✈️</div>
+            <h2>Payment Successful!</h2>
+            <div class="confirmation-details" id="confirmationDetails">
+                <!-- Confirmation details will be populated -->
+            </div>
+            <button class="modal-close" onclick="closeSuccessModal()">Continue</button>
+        </div>
+    </div>
+    
+    <script src="payment.js"></script>
+</body>
+</html>

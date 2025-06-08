@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Way Booking Form</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1 class="title">Sky Way Booking Form</h1>
+            
+            <form id="bookingForm" class="booking-form">
+                <!-- Booking Details Section -->
+                <div class="section">
+                    <h2 class="section-title">Booking Details</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">From</label>
+                            <select id="from" name="from" required>
+                                <option value="">Select departure city</option>
+                                <option value="new-york">New York</option>
+                                <option value="los-angeles">Los Angeles</option>
+                                <option value="chicago">Chicago</option>
+                                <option value="miami">Miami</option>
+                                <option value="london">London</option>
+                                <option value="paris">Paris</option>
+                                <option value="tokyo">Tokyo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="to">To</label>
+                            <select id="to" name="to" required>
+                                <option value="">Select destination city</option>
+                                <option value="new-york">New York</option>
+                                <option value="los-angeles">Los Angeles</option>
+                                <option value="chicago">Chicago</option>
+                                <option value="miami">Miami</option>
+                                <option value="london">London</option>
+                                <option value="paris">Paris</option>
+                                <option value="tokyo">Tokyo</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferred-airline">Preferred Airline</label>
+                            <select id="preferred-airline" name="preferred-airline">
+                                <option value="">Select airline</option>
+                                <option value="american">American Airlines</option>
+                                <option value="delta">Delta Air Lines</option>
+                                <option value="united">United Airlines</option>
+                                <option value="southwest">Southwest Airlines</option>
+                                <option value="jetblue">JetBlue Airways</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferred-seating">Preferred Seating</label>
+                            <select id="preferred-seating" name="preferred-seating">
+                                <option value="">Select seating preference</option>
+                                <option value="economy">Economy</option>
+                                <option value="premium-economy">Premium Economy</option>
+                                <option value="business">Business Class</option>
+                                <option value="first">First Class</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departure-date">Departure Date</label>
+                            <input type="date" id="departure-date" name="departure-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="departure-time">Departure Time</label>
+                            <select id="departure-time" name="departure-time">
+                                <option value="">Select time</option>
+                                <option value="morning">Morning (6AM - 12PM)</option>
+                                <option value="afternoon">Afternoon (12PM - 6PM)</option>
+                                <option value="evening">Evening (6PM - 12AM)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adults">Adults (12+ Yrs)</label>
+                            <select id="adults" name="adults" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="children">Children (2-11 Yrs)</label>
+                            <select id="children" name="children">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="infants">Infants (Under 2 Yrs)</label>
+                            <select id="infants" name="infants">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-type">
+                        <label class="section-label">Select Your Fare</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="one-way" name="trip-type" value="one-way" checked>
+                                <label for="one-way">One Way</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="round-trip" name="trip-type" value="round-trip">
+                                <label for="round-trip">Round Trip</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="return-details" id="return-details" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="return-date">Return Date</label>
+                                <input type="date" id="return-date" name="return-date">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="return-time">Return Time</label>
+                                <select id="return-time" name="return-time">
+                                    <option value="">Select time</option>
+                                    <option value="morning">Morning (6AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM - 6PM)</option>
+                                    <option value="evening">Evening (6PM - 12AM)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Any Message</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Special requests or additional information..."></textarea>
+                    </div>
+                </div>
+                
+                <!-- Personal Details Section -->
+                <div class="section">
+                    <h2 class="section-title">Personal Details</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <!-- Form Buttons -->
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <button type="button" class="clear-btn" id="clearForm">Clear Form</button>
+                </div>
+            </form>
+            
+            <div class="footer">
+                © 2024. Sky Way Booking Form - All Rights Reserved | Design by WebExpert
+            </div>
+        </div>
+    </div>
+    
+    <script src="booking.js"></script>
+</body>
+</html>
